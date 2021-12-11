@@ -1,0 +1,110 @@
+*{
+ /* box-sizing: border-box; */
+ margin: 0;
+ padding: 0;
+ border: 0;
+}
+html,body{
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 1.1rem;
+ background: rgba(29, 28, 28, 0.979);
+ text-align: center;
+ width: 100%;
+ height: 100%;
+ 
+ 
+}
+.todo {
+ display: flexbox;
+ /* flex-flow: wrap; */
+ /* grid-template-columns: 30% 70%; */
+ grid-template-rows: repeat(auto, minmax(200px,auto));
+ grid-auto-rows: minmax(200px, auto);
+ /* background: brown; */
+ margin: 0 auto;
+ max-width: 100%;
+ min-height: 200px;
+ position: relative;
+ grid-template-areas: 
+ "searchit assign task" 
+ "create create create"
+ "create create create";
+
+}
+@media screen and (min-width:760px) {
+ 
+ .todo{
+  display: grid;
+  grid-template-columns : 30% 70%;
+  grid-template-rows: repeat(auto, minmax(200px,auto));
+  grid-auto-rows: minmax(200px,auto);
+  /* background: brown; */
+  margin: 0 auto;
+  max-width: 100%;
+  min-height: 200px;
+  position: relative;
+  grid-template-areas: 
+  "searchit create create"
+  "assign create create"
+  "task create create";
+  
+ }
+}
+.todo div {
+ grid-template-rows: repeat(10, minmax(200px, auto));
+ grid-auto-rows: minmax(200px, auto);
+ grid-row: span 3;
+}
+
+.one {
+ background: rgb(44, 43, 43);
+ padding: 30px ;
+ /* display: flex; */
+ /* flex-wrap: wrap; */
+}
+.one input[type=button]{
+ background-color:rgb(94, 91, 91);
+ border: none;
+ color: white;
+ padding: 10px 10px;
+ text-decoration: none;
+ margin: 4px 2px;
+ cursor: pointer;
+ width: 90%;
+}
+.one input[type=search]{
+ border:none;
+ padding: 5px 5px;
+ background-color: rgba(29, 28, 28, 0.979);
+ margin: 4px 2px;
+ border-bottom: 3px solid white;
+ width: 70%;
+}
+
+.two div input{
+ width: 50%;
+ padding: 10px 10px;
+ margin-top: 50px;
+ box-sizing: border-box;
+ /* margin: 8px 0; */
+ /* background: chartreuse; */
+ /* padding: 100%; */
+ background-color: rgb(94, 91, 91);
+ color: white;
+ border: none;
+
+}
+ #assign {
+  
+ grid-area: assign;
+}
+#task{
+ grid-area: task;
+}
+#searchIt{
+ grid-area: searchit;
+}
+#create{
+ grid-area: create;
+}
+
